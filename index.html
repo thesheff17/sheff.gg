@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>sheff.gg</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #121212;
+      color: #e0e0e0;
+      line-height: 1.6;
+    }
+    header {
+      background: #1f1f1f;
+      padding: 20px;
+      text-align: center;
+      border-bottom: 2px solid #333;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      color: #00bcd4;
+    }
+    main {
+      padding: 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    section {
+      margin-bottom: 20px;
+    }
+    section h2 {
+      color: #ff9800;
+    }
+    footer {
+      text-align: center;
+      padding: 10px;
+      background: #1f1f1f;
+      border-top: 2px solid #333;
+      color: #757575;
+    }
+    a {
+      color: #00bcd4;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    
+  </style>
+</head>
+<body>
+  <header>
+    <h1>sheff.gg</h1>
+  </header>
+  <main>
+    <section>
+      <h2>What is this?</h2>
+      <p>
+        This is a website to host notes and examples I would create on stream/youtube.
+      
+      <h2>Which programming languages do I recommend?</h2>
+        TLDR: I recommend <a href="https://go.dev/">go.dev</a> and <a href="https://python.org">python.org</a>.
+        <br/><br/>
+        I believe readiablity and maintainability are the most important aspects when it comes to writing software.  If you can read and understand the code, you will be more inclinded to iterate on the code itself. You will also be more confident in the code you are writing/reading.
+
+        <h2>How do I make changes to code?</h2>
+        Make small PR (pull requests) in a git system on a branch and have people review the diff (difference). On critical systems I have 2 people review the pull request and require <a href="https://docs.github.com/en/authentication/managing-commit-signature-verification/signing-commits">signed commits</a>.  The branch name usually links back to a feature or fix in a ticket system. Once approved: merge to main branch and deploy to testing environment(s).  This change should also pass all CI/CD testing. QA should sign off on all fixes and changes in this testing environment. If you need more info on git branching this <a href="https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging">guide</a> can help.
+        <br/>
+        <h2>Links to other resources:</h2>
+
+        <a href="https://github.com/thesheff17/pythonexamples">python examples</a>
+        <br/>
+         <a href="https://github.com/thesheff17/golangexamples">golang examples</a>
+        <br/>
+        <br/>
+        The OWASP (The Open Worldwide Application Security Project) golang recommendations: <a href="https://github.com/OWASP/Go-SCP">https://github.com/OWASP/Go-SCP</a><br/>
+        Run golang in browser <a href="https://go.dev/play/">https://go.dev/play/</a><br/>
+        Case studies <a href="https://go.dev/solutions/case-studies">https://go.dev/solutions/case-studies</a>
+        <br/><br/>
+
+        <a href="https://peps.python.org/pep-0008/#a-foolish-consistency-is-the-hobgoblin-of-little-minds">A foolish consistency is the hobgoblin of little minds</a>
+      </p>
+       
+  </main>
+  <footer>
+  <p></p>
+  </footer>
+
+</body>
+</html>
+
