@@ -4,7 +4,81 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>sheff.gg</title>
+  <link href="prism.css" rel="stylesheet" />
+  <script type="text/javascript" src="prism.js"></script>
+
+
+  <script>
+        function copyCode(buttonElement) {
+            const codeBlock = buttonElement.previousElementSibling.querySelector('code');
+            const textToCopy = codeBlock.textContent;
+
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                buttonElement.textContent = "Copied!";
+                setTimeout(() => {
+                    buttonElement.textContent = "Copy Code";
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy text: ', err);
+                alert('Failed to copy code. Please try again or copy manually.');
+            });
+        }
+  </script>
+
+
   <style>
+    /* Basic styling for code blocks (optional, can be added to your CSS file) */
+        #code-snippets {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+
+        .code-block {
+            background-color: #eee;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            position: relative; /* Needed for positioning the button if you change its style */
+        }
+
+        .code-block h3 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        .code-block pre {
+            background-color: #333;
+            color: #f8f8f2;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto; /* Enables horizontal scrolling for long lines */
+        }
+
+        .code-block code {
+            font-family: 'Courier New', Courier, monospace;
+            display: block; /* Ensures the code block takes full width */
+            white-space: pre-wrap; /* Wraps long lines */
+        }
+
+        .code-block button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        .code-block button:hover {
+            background-color: #0056b3;
+        }
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -83,9 +157,45 @@
 
         <a href="https://peps.python.org/pep-0008/#a-foolish-consistency-is-the-hobgoblin-of-little-minds">A foolish consistency is the hobgoblin of little minds</a>
 
+        <h2>What am I using for programming highlighting?</h2>
+
+        I'm using <a href="https://prismjs.com/">prism.js</a> with a okaidia theme.
+
          <h2>See problems with this page?</h2>
          This file is stored in git like everything else <a href="https://github.com/thesheff17/sheff.gg/blob/main/index.html">here.</a>
          <br/>  Please make a PR if you see issues.
+
+         <br/>
+    <h2>Code Section:</h2>
+    <section id="code-snippets">
+    <div class="code-block">
+        <h3>Go Example:</h3>
+        <pre><code class="language-go">
+package main
+
+import "fmt"
+
+func main() {
+  fmt.Println("Hello, World!")
+}
+        </code></pre>
+        <button onclick="copyCode(this)">Copy Code</button>
+    </div>
+
+    <div class="code-block">
+        <h3>Python example:</h3>
+        <pre><code class="language-python">
+def hello_world(fname: str):
+    print (f"Hello World from python {fname}.")
+
+if __name__ == "__main__":
+    hello_world("Dan")
+    hello_world("Bob")
+        </code></pre>
+        <button onclick="copyCode(this)">Copy Code</button>
+    </div>
+
+
       </p>
   </main>
   <footer>
